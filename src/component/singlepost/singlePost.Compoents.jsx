@@ -24,7 +24,7 @@ const SinglePost = ({ GetSinglePost, StateSinglePost, loading }) => {
                 Get in Touch To Get SinglePost
             </h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="number" onChange={handleChange} />
+                <input type="number" onChange={handleChange} placeholder='id' />
                 <input type='submit' value="Confrim " />
             </form>
             <div>
