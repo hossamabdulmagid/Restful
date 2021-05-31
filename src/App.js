@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { getPost, GetSinglePost } from './redux/posts/postAction'
+import { connect } from 'react-redux'
+import { useState, useEffect } from 'react';
+import Header from './component/navbar/navbar.component'
+import SinglePost from './component/singlepost/singlePost.Compoents'
+import Posts from './component/posts/posts.component'
+import HomePage from './component/homepage/homepage.component'
+import DeletePost from './component/deletepost/deletePost.component'
+import EditSinglePost from './component/editpost/editpost.component'
+import { Route, Switch } from 'react-router';
+const App = () => {
 
-function App() {
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="App">
+        <div className="App-header">
+          <div className="container">
+            <Switch>
+              <Route exact path='/' component={HomePage} />
+              <Route path='/posts' component={Posts} />
+              <Route path='/singlepost' component={SinglePost} />
+              <Route path='/deletepost' component={DeletePost} />
+              <Route path='/editpost' component={EditSinglePost} />
+
+            </Switch>
+          </div>
+        </div>
+      </div >
+    </>
+
   );
 }
 
-export default App;
+
+export default (App);
